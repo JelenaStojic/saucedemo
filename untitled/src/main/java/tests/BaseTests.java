@@ -32,10 +32,10 @@ public abstract class BaseTests {
         this.shoopingCartPage = new ShoopingCartPage(driver, driverWait);
         this.checkoutPage = new CheckoutPage(driver, driverWait);
     }
-    @AfterClass
-    public void afterClas(){
-        driver.close();
-    }
+ //   @AfterClass
+ //   public void afterClas(){
+  //      driver.close();
+  //  }
     public LoginPage getLoginPage() {
         return loginPage;
     }

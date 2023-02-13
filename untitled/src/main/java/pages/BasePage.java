@@ -14,6 +14,7 @@ public class BasePage {
     private By menuBtn = By.id("react-burger-menu-btn");
     private By logout = By.id("logout_sidebar_link");
     private By aboutBtn = By.id("about_sidebar_link");
+    private By allItemsBtn = By.id("inventory_sidebar_link");
 
     public BasePage(WebDriver driver, WebDriverWait driverWait) {
         this.driver = driver;
@@ -49,5 +50,10 @@ public class BasePage {
     }
     public String aboutUrl(){
         return getDriver().getCurrentUrl();
+    }
+    public void allItems(){
+        getDriver().findElement(menuBtn).click();
+        getDriverWait().until(ExpectedConditions.visibilityOfElementLocated(allItemsBtn));
+        getDriver().findElement(allItemsBtn).click();
     }
 }
